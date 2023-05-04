@@ -4,6 +4,7 @@ import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from './components/Button';
 import Herosection from './components/Herosection';
+import Biosection from './components/Biosection';
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <Nav />
         <Header />
         <Herosection />
+        <Biosection />
         {children}
         </body>
     </html>
