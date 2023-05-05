@@ -112,6 +112,14 @@ body {
   border-radius: 8px;
   height: 30px;
 }
+.card-hover_state{
+  transition: all .2s ease-in;
+}
+.card-hover_state:hover{
+  transition: all .2s ease-in;
+  margin-top: -15px;
+  margin-left:-25px ;
+}
 
 .inputClass {
   @apply placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-4 pr-3 focus:outline-none focus:border-[#CB0E16] focus:border-[#CB0E16] focus:border-[#CB0E16] sm:text-sm

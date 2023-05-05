@@ -1,9 +1,12 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Herosection from "./components/Herosection";
+import Spotlight from "./components/Spotlight";
 
 export default function Home() {
   return (
-    <main className="primary_font flex min-h-screen flex-col items-center justify-between p-24">
-     <h1>Hello Memorial</h1>
+    <main className="primary_font flex flex-col items-center justify-between">
+      <Herosection />
+      <Spotlight />
     </main>
-  )
+  );
 }
