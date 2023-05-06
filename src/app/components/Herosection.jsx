@@ -4,7 +4,7 @@ export default function Herosection() {
   return (
     <div className="hero-bg mt-9">
       <div className="flex justify-center">
-        <p className="primary_font text-white text-center secondary_font-size leading-3 absolute bottom-7">
+        <p className="primary_font text-white text-center secondary_font-size leading-[32px] absolute bottom-7">
           CHRISTIAN ATANI OKPOFAA <br />
           OTOBOTEKERE JP
         </p>

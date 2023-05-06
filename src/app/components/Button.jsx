@@ -2,7 +2,6 @@ import { cva, VariantProps } from "class-variance-authority";
 
 const buttonClasses = cva(
   [
-    "rounded-3xl",
     "font-bold",
     "hover:scale-110",
     "active:scale-100",
@@ -34,7 +33,7 @@ const buttonClasses = cva(
           "border-gray-400",
           "hover:bg-gray-100",
           "border-solid",
-          "border-2",
+          "border-1",
           "border-gray-800",
         ],
         text: ["bg-transparent", "text-black", "hover:bg-gray-100"],
