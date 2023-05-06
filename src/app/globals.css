@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,104 +22,26 @@ body {
 }
 
 .primary_font {
-  font-family: 'Poppins', sans-serif;
-}
-
-.activeTab:after {
-  transform: scaleX(1) !important;
-}
-
-.navbar input[type="checkbox"],
-.navbar .hamburger-lines {
-  display: none;
-}
-
-.navbar {
-  width: 100%;
-  background: #fff;
-  color: #fff;
-  opacity: 0.85;
-  z-index: 100;
-  top: 0;
-}
-
-.navbar-container {
-  height: 104px;
-  align-items: center;
-}
-
-.menu-items {
-  order: 0;
-  display: flex;
-}
-
-.logo-img {
-  width: 130px;
-  height: auto;
-}
-
-.menu-items li {
-  list-style: none;
-  margin-left: 1.5rem;
-  font-size: 1.2rem;
-  font-family: 'Nunito', sans-serif;
-}
-
-.stroke li a {
-  display: inline-block;
-  position: relative;
-  color: #000;
-}
-
-.stroke li a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  border-radius: .4rem;
-  bottom: -5px;
-  left: 0;
-  background-color: #CB0E16;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out
-}
-
-.stroke li a:hover {
-  color: #666;
-}
-
-.stroke li a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-  opacity: 1;
-}
-
-.navbar a {
-  color: #000;
-  text-decoration: none;
+  font-family: 'Cormorant', serif;
   font-weight: 500;
-  transition: color 0.3s ease-in-out;
+  line-height: 32.8px;
+  letter-spacing:0.16rem;
 }
-
-.navbar a:hover {
-  color: #f78b77;
+.primary_font-size{
+  font-size: 40px;
 }
-
-.searchbar {
-  border: 1px solid #E3E5E5;
-  border-radius: 8px;
-  height: 30px;
+.secondary_font-size{
+  font-size: 20px;
 }
-.card-hover_state{
-  transition: all .2s ease-in;
+.hero-bg{
+  background-image: url('https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385153/atani_zuopsm.jpg');
+  height:80vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 10% 30%;
+  position: relative;
 }
-.card-hover_state:hover{
-  transition: all .2s ease-in;
-  margin-top: -15px;
-  margin-left:-25px ;
-}
-
 .inputClass {
   @apply placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-4 pr-3 focus:outline-none focus:border-[#CB0E16] focus:border-[#CB0E16] focus:border-[#CB0E16] sm:text-sm
 }

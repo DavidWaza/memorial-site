@@ -1,30 +1,17 @@
 "use client";
-import { Container, Row, Col } from "react-bootstrap";
-import CardWrapper from "./CardWrapper";
-import AuthForms from './AuthForms'
 
 export default function Herosection() {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <div className="bg-[#332C3D] mt-28 rounded-[24px] p-8 primary_font">
-            <Container>
-              <Row>
-                <Col sm={6}>
-                  {/* Image */}
-                  <h1>Let put some images here</h1>
-                </Col>
-                <Col sm={6}>
-                  <CardWrapper>
-                    <AuthForms />
-                  </CardWrapper>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+    <div className="hero-bg mt-9">
+      <div className="flex justify-center">
+        <p className="primary_font text-white text-center secondary_font-size leading-3 absolute bottom-7">
+          CHRISTIAN ATANI OKPOFAA <br />
+          OTOBOTEKERE JP
+        </p>
+        <p className="text-white primary_font secondary_font-size absolute bottom-0">
+          1925 - 2023
+        </p>
+      </div>
+    </div>
   );
 }
