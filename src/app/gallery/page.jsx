@@ -1,0 +1,22 @@
+"use client";
+import GalTributeSection from "../components/GalTributeSection";
+import Header from "../components/Header";
+import { Container, Col, Row } from "react-bootstrap";
+
+export default function Biography() {
+  return (
+    <main>
+      <div className="text-center mt-12">
+        <Header title="gallery" />
+      </div>
+      <Container>
+        <Row>
+          <Col>
+            
+          </Col>
+        </Row>
+        
+      </Container>
+    </main>
+  );
+}
