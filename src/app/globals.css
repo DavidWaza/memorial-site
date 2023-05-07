@@ -99,6 +99,38 @@ body {
 .sectiontitle:hover{
   margin-top: 10px;
 }
+.activeTab:after {
+  transform: scaleX(1) !important;
+}
+.stroke li a {
+  display: inline-block;
+  position: relative;
+  color: #000;
+}
+
+.stroke li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  border-radius: .4rem;
+  bottom: -5px;
+  left: 0;
+  background-color: #000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out
+}
+
+.stroke li a:hover {
+  color: #666;
+}
+
+.stroke li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  opacity: 1;
+}
 
 @media (max-width: 768px) {
   .navbar {

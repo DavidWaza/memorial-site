@@ -10,11 +10,8 @@ export default function Biography() {
       </div>
       <Container>
         <Row>
-          <Col>
-            
-          </Col>
+          <Col></Col>
         </Row>
-        
       </Container>
     </main>
   );
