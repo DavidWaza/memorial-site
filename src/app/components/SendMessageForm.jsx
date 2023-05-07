@@ -5,12 +5,12 @@ import Input from "./Input";
 export default function SendMessageForm() {
   return (
     <>
-      <div className="mt-10 mb-5 text-center">
+      <div className="mt-10 mb-5 text-center w-full">
         <p className="text-black primary_font secondary_font-size text-center">
           PAY YOUR RESPECT
         </p>
       </div>
-      <form>
+      <form className="w-full">
         <div className="my-3 flex justify-center">
           <Input placeholder="First Name" />
         </div>

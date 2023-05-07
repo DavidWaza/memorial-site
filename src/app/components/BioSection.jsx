@@ -1,6 +1,7 @@
 "use client";
 import { Container, Col, Row } from "react-bootstrap";
-import Button from './Button'
+import Button from "./Button";
+import Link from "next/link";
 
 export default function BioSection() {
   const bioContents = {
@@ -16,18 +17,28 @@ export default function BioSection() {
       <Row>
         <Col sm={6}>
           <div className="pt-20 pb-6 relative">
-            <p className="primary_font secondary_font-size">{bioContents.title.toUpperCase()}</p>
-            <hr className="hr"/>
-            <p className="primary_font leading-[25px] tracking-normal">{bioContents.content}</p>
+            <p className="primary_font secondary_font-size">
+              {bioContents.title.toUpperCase()}
+            </p>
+            <hr className="hr" />
+            <p className="primary_font leading-[25px] tracking-normal">
+              {bioContents.content}
+            </p>
           </div>
-          <div className="primary_font secondary_font-size tracking-[0.16rem]">
-            <Button intent="secondary" size="medium" className="text-md font-normal">
+          <Link href="/biography">
+            <div className="primary_font secondary_font-size tracking-[0.16rem]">
+              <Button
+                intent="secondary"
+                size="medium"
+                className="text-md font-normal"
+              >
                 View Biography
-            </Button>
-          </div>
+              </Button>
+            </div>
+          </Link>
         </Col>
         <Col sm={6}>
-            <div className="bio-bg-image"></div>
+          <div className="bio-bg-image"></div>
         </Col>
       </Row>
     </Container>

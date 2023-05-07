@@ -20,18 +20,16 @@ export default function GalTributeSection() {
         {sections.map(({ img, title, link }, index) => (
           <Col sm={6} key={index}>
             <Link href={link}>
-              <div className="grand-pere">
                 <div className="pere">
                   <img src={img} alt="photo" />
+                  <div className="overlay"></div>
                   <div className="sectiontitle">
                     <p className="primary_font text-white secondary_font-size hover:text-black">
                       {title}
                     </p>
                     <hr className="hr-white" />
                   </div>
-                  <div className="overlay"></div>
                 </div>
-              </div>
             </Link>
           </Col>
         ))}

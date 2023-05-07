@@ -5,7 +5,7 @@ export default function Footer() {
         <p>Copyright &#169; Novateur</p>
       </div>
       <div className="text-end text-white primary_font ">
-        <p>2022</p>
+        <p>2023</p>
       </div>
     </div>
   );
