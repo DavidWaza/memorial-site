@@ -11,7 +11,7 @@ export default function GalTributeSection() {
     {
       img: `https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385153/298209723_8168703349808166_1260154859052573940_n_ic4rtf.jpg`,
       title: "Tribute",
-      link: "/tibute",
+      link: "/tribute",
     },
   ];
   return (

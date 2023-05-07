@@ -1,5 +1,4 @@
 "use client";
-import GalTributeSection from "../components/GalTributeSection";
 import Header from "../components/Header";
 import { Container, Col, Row } from "react-bootstrap";
 
