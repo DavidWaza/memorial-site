@@ -1,0 +1,8 @@
+.hero {
+    background-image: url('https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385152/287095368_8292376167440883_4304878328313399205_n_dgdvzn.jpg');
+    height: 70vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
