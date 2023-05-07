@@ -132,6 +132,9 @@ body {
   opacity: 1;
 }
 
+.grid-item { width: 100% }
+.grid-item--width2 { width: 100%; }
+
 @media (max-width: 768px) {
   .navbar {
     opacity: 0.95;

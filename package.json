@@ -24,6 +24,7 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-masonry": "^1.0.7",
     "remake": "^2.6.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.2",
