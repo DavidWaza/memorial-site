@@ -1,13 +1,15 @@
 import clsx from "clsx";
+import { useState } from "react";
 
 const Input = ({ className, ...props }) => {
   return (
     <input
       className={clsx(
-        "border-solid-gray border-2 px-6 py-2 text-lg rounded-3xl w-full",
+        "border-solid-gray px-6 py-3 text-lg  w-1/2 bg-[#D9D9D9] primary_font",
         className
       )}
       {...props}
+      placeholder={props.placeholder}
     />
   );
 };
