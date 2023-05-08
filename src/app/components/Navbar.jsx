@@ -53,7 +53,7 @@ const Navbar = () => {
                   }`}
                   href={link}
                 >
-                  {label}
+                  <p className={label === 'Tribute' ? 'tribute-button' : ''}>{label}</p>
                 </Link>
               </li>
             ))}

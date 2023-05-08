@@ -1,8 +1,12 @@
 "use client";
+import CustomCarousel from './CustomCarousel'
 
 export default function Herosection() {
   return (
     <div className="hero-bg">
+      <div className='flex justify-center p-40'>
+      <CustomCarousel />
+      </div>
       <div className="flex justify-center">
         <p className="primary_font text-[20px] md:text-[40px]  text-white text-center md:leading-[52px] leading-[20px] absolute bottom-12">
           CHRISTIAN ATANI OKPOFAA OTOBOTEKERE JP

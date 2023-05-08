@@ -1,8 +1,14 @@
 import Image from "next/image";
+import "swiper/css";
+import "swiper/css/scrollbar";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import 'swiper/css/bundle';
 import Herosection from "./components/Herosection";
 import BioSection from "./components/BioSection";
 import GalTributeSection from "./components/GalTributeSection";
 import Navbar from "./components/Navbar";
+import CustomCarousel from "./components/CustomCarousel";
 
 export default function Home() {
   return (
