@@ -2,10 +2,12 @@
 import GalTributeSection from "../components/GalTributeSection";
 import styles from "./bio.module.css";
 import { Container, Col, Row } from "react-bootstrap";
+import NavRest from "../components/NavRest";
 
 export default function Biography() {
   return (
-    <main>
+    <main className="mt-10">
+      <NavRest />
       <div className={styles.hero}></div>
       <Container>
         <Row>
@@ -16,7 +18,7 @@ export default function Biography() {
           </Col>
         </Row>
         <Row>
-            <GalTributeSection />
+          <GalTributeSection />
         </Row>
       </Container>
     </main>

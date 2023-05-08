@@ -2,11 +2,12 @@
 import { images } from "../../../lib/data";
 import { Masonry } from "react-masonry";
 import { Container, Col, Row } from "react-bootstrap";
+import NavRest from "../components/NavRest";
 
 const Biography = () => {
   return (
-    <main className="text-center mt-20">
-     
+    <main className="mt-10">
+     <NavRest />
       <Container>
         <Row>
           <Col>

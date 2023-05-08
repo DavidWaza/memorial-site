@@ -2,20 +2,23 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import SendMessageForm from "../components/SendMessageForm";
+import NavRest from "../components/NavRest";
 
 const TributePage = () => {
   return (
-    <Container>
-      <Row className="pt-40">
-        <Col>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <SendMessageForm />
-        </Col>
-      </Row>
-    </Container>
+    <main className="mt-10">
+      <NavRest />
+      <Container>
+        <Row className="pt-40">
+          <Col></Col>
+        </Row>
+        <Row>
+          <Col>
+            <SendMessageForm />
+          </Col>
+        </Row>
+      </Container>
+    </main>
   );
 };
 

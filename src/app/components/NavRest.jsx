@@ -2,37 +2,21 @@
 import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
 
-const Navbar = () => {
+const NavRest = () => {
   const pathname = usePathname();
-  const [shouldChangeBg, setShouldChangeBg] = useState(false);
   const links = [
     { link: "/", label: "Home" },
     { link: "/biography", label: "Biography" },
     { link: "gallery", label: "Gallery" },
     { link: "/tribute", label: "Tribute" },
   ];
-  useEffect(() => {
-    const handleScroll = () => {
-      const { scrollY, innerHeight } = window;
-      const exceedsViewport = scrollY > innerHeight;
 
-      setShouldChangeBg(exceedsViewport);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <>
-      <div className="navbar nav-color-black -mt-5">
+      <div className="navbar flex justify-end -mt-5">
         <nav
-          className={`p-8 w-full ${
-            shouldChangeBg ? "navbar-bg-white" : "navbar-container"
-          }`}
+          className={`p-8 navbar-bg-white w-full`}
         >
           <input type="checkbox" name="" id="" />
           <div className="hamburger-lines p-0">
@@ -40,11 +24,7 @@ const Navbar = () => {
             <span className="line line2"></span>
             <span className="line line3"></span>
           </div>
-          <ul
-            className={`menu-items stroke ${
-              shouldChangeBg ? "stroke-color-black" : ""
-            }`}
-          >
+          <ul className={`menu-items stroke stroke-color-black`}>
             {links.map(({ link, label }, index) => (
               <li key={index} className={`primary_font secondary_font-size`}>
                 <Link
@@ -63,4 +43,4 @@ const Navbar = () => {
     </>
   );
 };
-export default Navbar;
+export default NavRest;
