@@ -14,6 +14,8 @@ export default function SendMessageForm(className) {
   const [displayPic, setDisplayPic] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [addComment, setAddComment] = useState([]);
+
 
 
   const handleSubmit = (e) => {

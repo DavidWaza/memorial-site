@@ -1,13 +1,12 @@
 "use client";
-import Header from "../components/Header";
 import { images } from "../../../lib/data";
 import { Masonry } from "react-masonry";
 import { Container, Col, Row } from "react-bootstrap";
 
 const Biography = () => {
   return (
-    <main className="text-center mt-40">
-      <Header title="gallery" />
+    <main className="text-center mt-20">
+     
       <Container>
         <Row>
           <Col>

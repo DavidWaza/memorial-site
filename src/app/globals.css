@@ -39,7 +39,7 @@ body {
 .hero-bg {
   background-image: url('');
   background: linear-gradient(69.35deg, rgba(0, 0, 0, .4)0%, rgba(0, 0, 0, .4)99.45%), linear-gradient(0deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385153/atani_zuopsm.jpg") no-repeat 10% -130%;
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -114,7 +114,7 @@ body {
 
 .navbar {
   width: 100%;
-  background: #fff;
+  background: transparent;
   color: #fff;
   opacity: 1;
   z-index: 100;
@@ -126,7 +126,7 @@ body {
   height: 104px;
   position: fixed;
   top: 0;
-  background-color: #fff;
+  background-color:transparent;
 }
 
 .menu-items {
@@ -300,8 +300,12 @@ body {
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 920px) {
   .navbar-container input[type="checkbox"]:checked~.logo {
     display: none;
   }
+  
+.hero-bg {
+  background-position: center center;
+}
 }
