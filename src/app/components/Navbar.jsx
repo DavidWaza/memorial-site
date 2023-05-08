@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const Links = [
+  const links = [
     { link: "/", label: "Home" },
     { link: "/biography", label: "Biography" },
     { link: "gallery", label: "Gallery" },
@@ -13,30 +13,30 @@ const Navbar = () => {
   ];
   return (
     <>
-      <Container>
-        <Row>
-          <div className="flex justify-end mt-10 pt-10">
-            {Links.map(({ link, label }, index) => (
-              <ul
-                key={index}
-                className="primary_font secondary_font-size bg-transparent stroke"
-              >
-                <li>
-                <Link
-                  href={link}
-                  className={`no-underline ${
-                    pathname === link ? "activeTab" : null
-                  }`}
-                >
-                  {label}
-                </Link>
+        <nav className="navbar flex justify-end">
+          <div className="navbar-container p-8 w-full">
+            <input type="checkbox" name="" id="" />
+            <div className="hamburger-lines p-0">
+              <span className="line line1"></span>
+              <span className="line line2"></span>
+              <span className="line line3"></span>
+            </div>
+            <ul className={`menu-items stroke`}>
+              {links.map(({ link, label }, index) => (
+                <li key={index} className="primary_font secondary_font-size">
+                  <Link
+                    className={`no-underline ${
+                      pathname === link ? "activeTab" : null
+                    }`}
+                    href={link}
+                  >
+                    {label}
+                  </Link>
                 </li>
-               
-              </ul>
-            ))}
+              ))}
+            </ul>
           </div>
-        </Row>
-      </Container>
+        </nav>
     </>
   );
 };

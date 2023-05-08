@@ -1,8 +1,24 @@
 "use client";
 import Button from "./Button";
-import Input from "./Input";
+import { useState } from "react";
+import clsx from "clsx";
 
-export default function SendMessageForm() {
+export default function SendMessageForm({ className }) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const submitValue = () => {
+    const frmDetails = {
+      'First Name': firstName,
+      'Last Name': lastName,
+      'Message': message,
+    };
+  };
   return (
     <>
       <div className="mt-10 mb-5 text-center w-full">
@@ -10,15 +26,40 @@ export default function SendMessageForm() {
           PAY YOUR RESPECT
         </p>
       </div>
-      <form className="w-full">
+      <form className="w-full" onSubmit={handleSubmit}>
         <div className="my-3 flex justify-center">
-          <Input placeholder="First Name" />
+          <input
+            className={clsx(
+              "border-solid-gray px-6 py-3 text-lg w-1/2 bg-[#D9D9D9] primary_font",
+              className
+            )}
+            placeholder="First Name"
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
         </div>
+        {/* <p>First Name: {details['First Name']}</p> */}
         <div className="my-3 flex justify-center">
-          <Input placeholder="Last Name" />
+          <input
+            className={clsx(
+              "border-solid-gray px-6 py-3 text-lg w-1/2 bg-[#D9D9D9] primary_font",
+              className
+            )}
+            placeholder="Last Name"
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
         </div>
         <div className="my-3 flex justify-center relative">
-          <Input placeholder="Upload Picture" />
+          <input
+            className={clsx(
+              "border-solid-gray px-6 py-3 text-lg w-1/2 bg-[#D9D9D9] primary_font",
+              className
+            )}
+            placeholder="Upload images"
+          />
           <div className="absolute md:right-72 right-3 right md:top-3 top-20 primary_font">
             <input
               type="file"
@@ -33,6 +74,9 @@ export default function SendMessageForm() {
             name="text"
             className="border-solid-gray px-6 py-3 text-lg  w-1/2 bg-[#D9D9D9] primary_font"
             placeholder="Message"
+            type="text"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
         </div>
         <div className="my-3 flex justify-center">
@@ -40,6 +84,7 @@ export default function SendMessageForm() {
             intent="secondary"
             size="medium"
             className=" primary_font py-3 px-5"
+            onClick={submitValue}
           >
             Send Message
           </Button>

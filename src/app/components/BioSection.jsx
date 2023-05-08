@@ -13,7 +13,7 @@ export default function BioSection() {
        sis tellus mauris eget urna. Duis sed justo vestibulum, efficitur massa eget.`,
   };
   return (
-    <Container className="my-10">
+    <Container className="py-20">
       <Row>
         <Col sm={6}>
           <div className="pt-20 pb-6 relative">

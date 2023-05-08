@@ -8,7 +8,7 @@ import Header from "./components/Header";
 export default function Home() {
   return (
     <main className="primary_font flex flex-col items-center justify-between">
-      <div className="text-center mt-12">
+      <div className="text-center mt-20">
         <Header title="memory" />
       </div>
       <Herosection />
