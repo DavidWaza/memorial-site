@@ -13,20 +13,20 @@ export default function BioSection() {
        sis tellus mauris eget urna. Duis sed justo vestibulum, efficitur massa eget.`,
   };
   return (
-    <Container className="py-20">
-      <Row>
+    <Container >
+      <Row className="py-20 px-3 md:px-0 g-5 ">
         <Col sm={6}>
-          <div className="pt-20 pb-6 relative">
-            <p className="primary_font secondary_font-size">
+          <div className="pt-20 pb-6 relative space-adjustment">
+            <p className="primary_font secondary_font-size font-adjustment">
               {bioContents.title.toUpperCase()}
             </p>
             <hr className="hr" />
-            <p className="primary_font leading-[25px] tracking-normal">
+            <p className="primary_font leading-[25px] tracking-normal font-adjustment">
               {bioContents.content}
             </p>
           </div>
           <Link href="/biography">
-            <div className="primary_font secondary_font-size tracking-[0.16rem]">
+            <div className="primary_font secondary_font-size tracking-[0.16rem] button-group">
               <Button
                 intent="secondary"
                 size="medium"

@@ -22,6 +22,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* COMPONENTS TYPOSGRAPHY */
 .primary_font {
   font-family: 'Cormorant', serif;
   font-weight: 500;
@@ -34,6 +35,10 @@ body {
 
 .secondary_font-size {
   font-size: 20px;
+}
+
+.font-adjustment {
+  text-align: justify;
 }
 
 .hero-bg {
@@ -71,7 +76,7 @@ body {
   margin-left: 10px;
 }
 
-.tribute-button{
+.tribute-button {
   background-color: #FAEBD7;
   padding-left: 8px;
   padding-right: 8px;
@@ -79,11 +84,12 @@ body {
   padding-bottom: 3px;
   color: #000;
 }
-.carousel-div{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+.carousel-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .pere {
@@ -283,6 +289,22 @@ body {
 
 
 @media (max-width: 768px) {
+  /* COMPONENT ADJUSTMENTS */
+  .font-adjustment{
+    text-align: center;
+  }
+  .hr{
+    margin: 10px auto;
+    width: 27%;
+  }
+  .button-group{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .space-adjustment{
+    margin-top: -20px;
+  }
   .navbar {
     opacity: 0.95;
   }
