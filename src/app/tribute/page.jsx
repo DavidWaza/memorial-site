@@ -1,17 +1,57 @@
 "use client";
 import Button from "../components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import clsx from "clsx";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle, faCircleNotch, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import Header from "../components/Header";
+import Image from "next/image";
 
 export default function SendMessageForm(className) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
+  const [displayPic, setDisplayPic] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
+
+  const handleMessageChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+   useEffect(() => {
+    const firstNameFromStorage = localStorage.getItem('firstName');
+    const lastNameFromStorage = localStorage.getItem('lastName');
+    const messageFromStorage = localStorage.getItem('message');
+
+    if (firstNameFromStorage) {
+      setFirstName(firstNameFromStorage);
+    }
+
+    if (lastNameFromStorage) {
+      setLastName(lastNameFromStorage);
+    }
+
+    if (messageFromStorage) {
+      setMessage(messageFromStorage);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('firstName', firstName);
+    localStorage.setItem('lastName', lastName);
+    localStorage.setItem('message', message);
+  }, [firstName, lastName, message]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,24 +66,39 @@ export default function SendMessageForm(className) {
     const frmDetails = {
       "First Name": firstName,
       "Last Name": lastName,
-      Message: message,
+      "Message": message,
+      "Display Images": displayPic,
     };
     return frmDetails;
   };
 
-  const details = submitValue();
 
   return (
     <>
       <Container>
         <Row className="pt-40">
           <Col>
-            {isSubmitted && <p>First Name: {firstName}</p>}
-            {isSubmitted && <p>Last Name: {lastName}</p>}
-            {isSubmitted && <p>Your Message: {message}</p>}
+            <div className="text-center">
+              <Header title="Tribute Hall" />
+            </div>
           </Col>
         </Row>
-      </Container>
+        <Row className="card">
+          <Col>
+            <div className="flex">
+              {/* <div className>
+                <Image src={isSubmitted && displayPic} alt="user-photo" width={500} height={500}/>
+              </div> */}
+              <p className="primary_font font-black antialiased text-md">
+                {isSubmitted && firstName + " " + " " + lastName}
+              </p>
+            </div>
+            {/* <p>{Date.now()}</p> */}
+            <div>
+              <p className="primary_font antialiased secondary_font-size tracking-normal">{isSubmitted && message}</p>
+            </div>
+          </Col>
+        </Row>
       <div className="mt-40 mb-5 text-center w-full">
         <p className="text-black primary_font secondary_font-size text-center">
           PAY YOUR RESPECT
@@ -59,7 +114,7 @@ export default function SendMessageForm(className) {
             placeholder="First Name"
             type="text"
             value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            onChange={handleFirstNameChange}
           />
         </div>
         <div className="my-3 flex justify-center">
@@ -71,7 +126,7 @@ export default function SendMessageForm(className) {
             placeholder="Last Name"
             type="text"
             value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            onChange={handleLastNameChange}
           />
         </div>
         <div className="my-3 flex justify-center relative">
@@ -87,6 +142,7 @@ export default function SendMessageForm(className) {
               type="file"
               name="upload"
               accept="image/png, image/jpeg, image/jpg"
+            onChange={(e) => setDisplayPic(e.target.value)}
             />
           </div>
         </div>
@@ -98,8 +154,11 @@ export default function SendMessageForm(className) {
             placeholder="Message"
             type="text"
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={handleMessageChange}
           />
+        </div>
+        <div>
+       
         </div>
         <div className="my-3 flex justify-center">
           <Button
@@ -118,6 +177,7 @@ export default function SendMessageForm(className) {
           </Button>
         </div>
       </form>
+      </Container>
     </>
   );
 }

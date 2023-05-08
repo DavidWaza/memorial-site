@@ -179,7 +179,11 @@ body {
 
 .grid-item { width: 100% }
 .grid-item--width2 { width: 100%; }
-
+.card{
+  background-color: antiquewhite;
+  padding: 20px;
+  text-align: justify;
+}
 @media (max-width: 768px) {
   .navbar {
     opacity: 0.95;
