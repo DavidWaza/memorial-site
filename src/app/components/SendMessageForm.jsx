@@ -5,8 +5,7 @@ import clsx from "clsx";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
-import Header from "../components/Header";
-import Image from "next/image";
+import AddComment from "./AddComment";
 
 export default function SendMessageForm(className) {
   const [firstName, setFirstName] = useState("");
@@ -16,13 +15,6 @@ export default function SendMessageForm(className) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  //   // Load the stored input value from Local Storage on component mount
-  //   const storedValue = localStorage.getItem('inputValue');
-  //   if (storedValue) {
-  //     setInputValue(storedValue);
-  //   }
-  // }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,24 +38,12 @@ export default function SendMessageForm(className) {
   return (
     <>
       <Container>
-        <Row className="card">
-          <Col>
-            <div className="flex">
-              {/* <div className>
-                <Image src={isSubmitted && displayPic} alt="user-photo" width={500} height={500}/>
-              </div> */}
-              <p className="primary_font font-black antialiased text-md">
-                {isSubmitted && firstName + " " + " " + lastName}
-              </p>
-            </div>
-            {/* <p>{Date.now()}</p> */}
-            <div>
-              <p className="primary_font antialiased secondary_font-size tracking-normal">
-                {isSubmitted && message}
-              </p>
-            </div>
-          </Col>
-        </Row>
+        <AddComment
+          isSubmitted={isSubmitted}
+          firstName={firstName}
+          lastName={lastName}
+          message={message}
+        />
         <div className="mt-40 mb-5 text-center w-full">
           <p className="text-black primary_font secondary_font-size text-center">
             PAY YOUR RESPECT
