@@ -6,9 +6,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
-export default function SendMessageForm({className, party}) {
+export default function SendCompanyForm({className, party}) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [position, setPosition] = useState("");
   const [message, setMessage] = useState("");
   const [displayPic, setDisplayPic] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -39,7 +41,7 @@ export default function SendMessageForm({className, party}) {
   return (
     <>
       <Container>
-        <div className="mt-10 mb-5 text-center w-full">
+        <div className="mt-3 mb-5 text-center w-full">
           <p className="text-black primary_font secondary_font-size text-center">
             PAY YOUR RESPECT
           </p>
@@ -70,8 +72,31 @@ export default function SendMessageForm({className, party}) {
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
+          <div className="my-3 flex justify-center">
+            <input
+              className={clsx(
+                "border-solid-gray px-6 py-3 text-lg w-full bg-[#D9D9D9] primary_font",
+                className
+              )}
+              placeholder="Company Name"
+              type="text"
+              value={companyName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
+          <div className="my-3 flex justify-center">
+            <input
+              className={clsx(
+                "border-solid-gray px-6 py-3 text-lg w-full bg-[#D9D9D9] primary_font",
+                className
+              )}
+              placeholder="Company Role"
+              type="text"
+              value={position}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
           <div className="my-3 flex justify-center relative">
-         
             <div className="border-solid-gray px-6 py-3 text-lg w-full bg-[#D9D9D9] primary_font">
               <input
                 type="file"

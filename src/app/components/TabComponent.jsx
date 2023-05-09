@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import SendMessageForm from './SendMessageForm';
+import SendCompanyForm from './SendCompanyForm'
 
 
 
@@ -53,7 +54,7 @@ export default function TabComponent() {
         <SendMessageForm party='As an individual'/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <SendMessageForm party='As a Company' />
+        <SendCompanyForm party='As a Company' />
       </TabPanel>
     </Box>
   );
