@@ -3,12 +3,12 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import 'swiper/css/bundle';
+import "swiper/css/bundle";
 import Herosection from "./components/Herosection";
 import BioSection from "./components/BioSection";
 import GalTributeSection from "./components/GalTributeSection";
 import Navbar from "./components/Navbar";
-import CustomCarousel from "./components/CustomCarousel";
+import ModalButton from "./components/ModalForm";
 
 export default function Home() {
   return (
@@ -17,6 +17,9 @@ export default function Home() {
       <Herosection />
       <BioSection />
       <GalTributeSection />
+      <div className="bg-black py-3 flex justify-center my-4">
+          <ModalButton />
+      </div>
     </main>
   );
 }

@@ -40,13 +40,7 @@ export default function SendMessageForm(className) {
   return (
     <>
       <Container>
-        <AddComment
-          isSubmitted={isSubmitted}
-          firstName={firstName}
-          lastName={lastName}
-          message={message}
-        />
-        <div className="mt-40 mb-5 text-center w-full">
+        <div className="mt-20 mb-5 text-center w-full">
           <p className="text-black primary_font secondary_font-size text-center">
             PAY YOUR RESPECT
           </p>
@@ -55,7 +49,7 @@ export default function SendMessageForm(className) {
           <div className="my-3 flex justify-center">
             <input
               className={clsx(
-                "border-solid-gray px-6 py-3 text-lg w-1/2 bg-[#D9D9D9] primary_font",
+                "border-solid-gray px-6 py-3 text-lg w-full bg-[#D9D9D9] primary_font",
                 className
               )}
               placeholder="First Name"
@@ -67,7 +61,7 @@ export default function SendMessageForm(className) {
           <div className="my-3 flex justify-center">
             <input
               className={clsx(
-                "border-solid-gray px-6 py-3 text-lg w-1/2 bg-[#D9D9D9] primary_font",
+                "border-solid-gray px-6 py-3 text-lg w-full bg-[#D9D9D9] primary_font",
                 className
               )}
               placeholder="Last Name"
@@ -77,14 +71,8 @@ export default function SendMessageForm(className) {
             />
           </div>
           <div className="my-3 flex justify-center relative">
-            <input
-              className={clsx(
-                "border-solid-gray px-6 py-3 text-lg w-1/2 bg-[#D9D9D9] primary_font",
-                className
-              )}
-              placeholder="Upload images"
-            />
-            <div className="absolute md:right-72 right-3 right md:top-3 top-20 primary_font">
+         
+            <div className="border-solid-gray px-6 py-3 text-lg w-full bg-[#D9D9D9] primary_font">
               <input
                 type="file"
                 name="upload"
@@ -94,10 +82,10 @@ export default function SendMessageForm(className) {
             </div>
           </div>
 
-          <div className="flex justify-center mt-16 md:mt-0">
+          <div className="flex justify-center md:mt-0">
             <textarea
               name="text"
-              className="border-solid-gray px-6 py-3 text-lg  w-1/2 bg-[#D9D9D9] primary_font"
+              className="border-solid-gray px-6 py-3 text-lg  w-full bg-[#D9D9D9] primary_font"
               placeholder="Message"
               type="text"
               value={message}

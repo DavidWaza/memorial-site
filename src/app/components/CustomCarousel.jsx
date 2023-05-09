@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { UserCommentCard } from "./UserCommentCard";
+import  UserCommentCard  from "./UserCommentCard";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -20,7 +20,7 @@ const UserCommentsProfile = [
     src: "/daave.jpg",
   },
 ];
-export default function App() {
+const CustomCarousel = () => {
   return (
     <>
       <Swiper
@@ -54,3 +54,4 @@ export default function App() {
     </>
   );
 }
+export default CustomCarousel;
