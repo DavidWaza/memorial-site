@@ -197,7 +197,7 @@ body {
   transform: scaleX(0);
   height: 2px;
   border-radius: .4rem;
-  bottom: -5px;
+  bottom: 0px;
   left: 0;
   background-color: #fff;
   transform-origin: bottom right;
@@ -234,8 +234,8 @@ body {
 
 
 .swiper {
-  width: 70%;
-  height: 30%;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide {
@@ -289,22 +289,40 @@ body {
 
 
 @media (max-width: 768px) {
+
   /* COMPONENT ADJUSTMENTS */
-  .font-adjustment{
+  .font-adjustment {
     text-align: center;
   }
-  .hr{
+
+  .customCarouselPadding {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .cutomHeight {
+    height: 18rem;
+  }
+
+  .customCarouselMargin {
+    margin-top: 10%;
+  }
+
+  .hr {
     margin: 10px auto;
     width: 27%;
   }
-  .button-group{
+
+  .button-group {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
   }
-  .space-adjustment{
+
+  .space-adjustment {
     margin-top: -20px;
   }
+
   .navbar {
     opacity: 0.95;
   }

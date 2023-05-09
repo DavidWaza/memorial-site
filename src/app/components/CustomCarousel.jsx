@@ -1,47 +1,55 @@
-'use client'
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { UserCommentCard } from "./UserCommentCard";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { Keyboard, Navigation, Pagination } from "swiper";
 
-
-// import required modules
-import { Pagination } from "swiper";
-
+const UserCommentsProfile = [
+  {
+    name: "fernando suarez",
+    src: "/dorrel.jpg",
+  },
+  {
+    name: "sarah tabowski",
+    src: "/sarah.jpg",
+  },
+  {
+    name: "daave Santtta",
+    src: "/daave.jpg",
+  },
+];
 export default function App() {
   return (
     <>
       <Swiper
-        slidesPerView={2}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
+          slidesPerView={1}
+          centeredSlides={false}
+          slidesPerGroupSkip={2}
+          grabCursor={true}
+          keyboard={{
+            enabled: true,
+          }}
+          breakpoints={{
+            769: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+            },
+          }}
+          scrollbar={true}
+          navigation={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Keyboard, Navigation, Pagination]}
+          className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="">
-            <UserCommentCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-white h-96"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="bg-white h-96"></div>
-
-        </SwiperSlide>
-        {/* <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
+        {UserCommentsProfile.map(({ name, src }, index) => (
+          <SwiperSlide key={index}>
+            <UserCommentCard src={src} name={name} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
