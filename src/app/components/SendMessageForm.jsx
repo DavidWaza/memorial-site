@@ -5,9 +5,8 @@ import clsx from "clsx";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
-import AddComment from "./AddComment";
 
-export default function SendMessageForm(className) {
+export default function SendMessageForm({className, party}) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
@@ -44,6 +43,7 @@ export default function SendMessageForm(className) {
           <p className="text-black primary_font secondary_font-size text-center">
             PAY YOUR RESPECT
           </p>
+          <p className="primary_font">{party}</p>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
           <div className="my-3 flex justify-center">

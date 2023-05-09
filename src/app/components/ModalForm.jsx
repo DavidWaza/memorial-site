@@ -6,8 +6,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import SendMessageForm from "./SendMessageForm";
-
+import TabComponent from './TabComponent'
 const style = {
   position: "absolute",
   top: "50%",
@@ -45,7 +44,7 @@ export default function ModalButton() {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <SendMessageForm />
+            <TabComponent />
           </Box>
         </Fade>
       </Modal>
