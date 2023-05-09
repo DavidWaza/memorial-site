@@ -4,7 +4,7 @@ import CustomCarousel from './CustomCarousel'
 export default function Herosection() {
   return (
     <div className="hero-bg">
-      <div className='flex justify-center p-40'>
+      <div className='flex justify-center p-20'>
       <CustomCarousel />
       </div>
       <div className="flex justify-center">
