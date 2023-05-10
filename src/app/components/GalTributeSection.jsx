@@ -21,16 +21,25 @@ export default function GalTributeSection() {
         {sections.map(({ img, title, link }, index) => (
           <Col sm={6} key={index}>
             <Link href={link}>
-                <motion.div whileHover={{scale:1.06}} className="pere">
-                  <img src={img} alt="photo" />
-                  <div className="overlay"></div>
-                  <div className="sectiontitle">
-                    <p className="primary_font text-white secondary_font-size hover:text-black">
-                      {title}
-                    </p>
-                    <hr className="hr-white" />
-                  </div>
-                </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.5,
+                  ease: [0.9, 0.71, 0.7, 1.01],
+                }}
+                className="pere"
+              >
+                <img src={img} alt="photo" />
+                <div className="overlay"></div>
+                <div className="sectiontitle">
+                  <p className="primary_font text-white secondary_font-size hover:text-black">
+                    {title}
+                  </p>
+                  <hr className="hr-white" />
+                </div>
+              </motion.div>
             </Link>
           </Col>
         ))}
