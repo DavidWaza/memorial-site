@@ -27,7 +27,7 @@ export default function ModalButton() {
   return (
     <div>
       <Button onClick={handleOpen}>
-        <div className='primary_font text-center text-white px-3'>Pay your Tribute</div>
+        <div className='primary_font text-center text-white px-3'>Write a Tribute</div>
       </Button>
       <Modal
         aria-labelledby="transition-modal-title"

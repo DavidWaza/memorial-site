@@ -5,21 +5,8 @@ import  UserCommentCard  from "./UserCommentCard";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Keyboard, Navigation, Pagination } from "swiper";
+import {UserCommentsProfile} from '../../../lib/data'
 
-const UserCommentsProfile = [
-  {
-    name: "fernando suarez",
-    src: "/dorrel.jpg",
-  },
-  {
-    name: "sarah tabowski",
-    src: "/sarah.jpg",
-  },
-  {
-    name: "daave Santtta",
-    src: "/daave.jpg",
-  },
-];
 const CustomCarousel = () => {
   return (
     <>
