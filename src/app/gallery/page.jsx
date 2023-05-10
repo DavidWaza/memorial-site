@@ -9,10 +9,10 @@ const GalleryPage = () => {
     <>
     <NavRest />
       <Container>
-        <Row className="mt-52">
-          {Photos.map(({ id, src, width, height }) => (
+        <Row className="mt-52 g-0">
+          {Photos.map(({ id, src}) => (
             <Col sm={4} key={id}>
-              <img src={src} alt="photo"  />
+              <img src={src} alt="photo" className="img-size" />
             </Col>
           ))}
         </Row>

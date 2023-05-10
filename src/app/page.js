@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="primary_font flex flex-col items-center justify-between mt-10 md:-mt-5">
+    <main className="primary_font flex flex-col items-center justify-between md:-mt-5">
       <Navbar />
       <Herosection />
       <BioSection />

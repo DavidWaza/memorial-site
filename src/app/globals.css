@@ -41,6 +41,11 @@ body {
   text-align: justify;
 }
 
+.img-size {
+  height: 400px;
+  width: 100%;
+}
+
 .hero-bg {
   background-image: url('');
   background: linear-gradient(69.35deg, rgba(0, 0, 0, .4)0%, rgba(0, 0, 0, .4)99.45%), linear-gradient(0deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385153/atani_zuopsm.jpg") no-repeat 10% -130%;
@@ -323,6 +328,11 @@ body {
 
   .navbar {
     opacity: 0.95;
+    background-color: transparent;
+    position: fixed !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .navbar-container input[type="checkbox"],
@@ -330,9 +340,14 @@ body {
     display: block;
   }
 
+  .hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   .navbar-container {
     display: block;
-    position: relative;
     height: 64px;
   }
 
@@ -397,7 +412,7 @@ body {
     height: 4px;
     width: 100%;
     border-radius: 10px;
-    background: #333;
+    background: #fff;
   }
 
   .navbar-bg-white .hamburger-lines .line {
@@ -405,7 +420,7 @@ body {
     height: 4px;
     width: 100%;
     border-radius: 10px;
-    background: #333;
+    background: #fff;
   }
 
   .navbar-container .hamburger-lines .line1 {
@@ -429,7 +444,7 @@ body {
 
   .navbar .menu-items {
     padding-top: 100px;
-    background: #fff;
+    background: transparent;
     height: 100vh;
     max-width: 300px;
     transform: translate(-150%);
@@ -525,6 +540,7 @@ body {
   }
 
 }
+
 /* @media (max-width) {
   .carousel-position{
     position: relative;
@@ -533,44 +549,50 @@ body {
   
 } */
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
   .carousel-position {
     position: relative;
     top: 50px;
   }
 }
+
 @media (min-width: 481px) and (max-width: 1023px) {
-  .carousel-position{
+  .carousel-position {
     position: relative;
     top: 20%;
   }
 }
+
 @media (min-width: 1024px) {
-  .carousel-position{
+  .carousel-position {
     position: relative;
     top: -25%;
   }
 }
+
 @media (min-width: 1025px) {
-  .carousel-position{
+  .carousel-position {
     position: relative;
     top: 5%;
   }
 }
-@media (width: 375px){
-  .carousel-position{
+
+@media (width: 375px) {
+  .carousel-position {
     position: relative;
     top: -22%;
   }
 }
-@media (width: 360px){
-  .carousel-position{
+
+@media (width: 360px) {
+  .carousel-position {
     position: relative;
     top: -10%;
   }
 }
-@media (width: 540px){
-  .carousel-position{
+
+@media (width: 540px) {
+  .carousel-position {
     position: relative;
     top: -5%;
   }

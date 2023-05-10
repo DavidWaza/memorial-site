@@ -2,6 +2,7 @@
 import { Container, Col, Row } from "react-bootstrap";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
 export default function GalTributeSection() {
   const sections = [
     {
@@ -22,6 +23,7 @@ export default function GalTributeSection() {
           <Col sm={6} key={index}>
             <Link href={link}>
               <motion.div
+                whileHover={1.1}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{
