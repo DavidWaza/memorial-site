@@ -52,6 +52,7 @@ body {
   position: relative;
 }
 
+
 .bio-bg-image {
   background-image: url('https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385152/287095368_8292376167440883_4304878328313399205_n_dgdvzn.jpg');
   height: 50vh;
@@ -304,9 +305,6 @@ body {
     height: 18rem;
   }
 
-  .customCarouselMargin {
-    margin-top: 30%;
-  }
 
   .hr {
     margin: 10px auto;
@@ -524,5 +522,56 @@ body {
 
   .hero-bg {
     background-position: center center;
+  }
+
+}
+/* @media (max-width) {
+  .carousel-position{
+    position: relative;
+    top:100px ;
+  }
+  
+} */
+
+@media (max-width: 480px){
+  .carousel-position {
+    position: relative;
+    top: 50px;
+  }
+}
+@media (min-width: 481px) and (max-width: 1023px) {
+  .carousel-position{
+    position: relative;
+    top: 20%;
+  }
+}
+@media (min-width: 1024px) {
+  .carousel-position{
+    position: relative;
+    top: -25%;
+  }
+}
+@media (min-width: 1025px) {
+  .carousel-position{
+    position: relative;
+    top: 5%;
+  }
+}
+@media (width: 375px){
+  .carousel-position{
+    position: relative;
+    top: -22%;
+  }
+}
+@media (width: 360px){
+  .carousel-position{
+    position: relative;
+    top: -10%;
+  }
+}
+@media (width: 540px){
+  .carousel-position{
+    position: relative;
+    top: -5%;
   }
 }

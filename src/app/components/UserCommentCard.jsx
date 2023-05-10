@@ -10,7 +10,7 @@ const UserCommentCard = ({src, name}) => {
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia sx={{ height: 140 }} image={src} title="green iguana" />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" className='mobile-text'>
           Zephyr moonlit dance cast a spell upon enchanted forest. Whispering
           leaves pirouetted through the night,while starlight painted a
           celestial tapestry overhead. Mystical creatures gathered in the

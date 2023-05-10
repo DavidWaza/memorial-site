@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { Container, Row, Col } from "react-bootstrap";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 const NavRest = () => {
@@ -14,7 +13,7 @@ const NavRest = () => {
 
   return (
     <>
-      <nav className="navbar flex justify-end -mt-5">
+      <div className="navbar flex justify-end -mt-5">
         <nav
           className={`p-8 navbar-bg-white w-full`}
         >
@@ -39,7 +38,7 @@ const NavRest = () => {
             ))}
           </ul>
         </nav>
-      </nav>
+      </div>
     </>
   );
 };
