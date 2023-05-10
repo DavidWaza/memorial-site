@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import { usePathname } from "next/navigation";
-
+import { motion } from "framer-motion";
 const NavRest = () => {
   const pathname = usePathname();
   const links = [
@@ -26,7 +26,7 @@ const NavRest = () => {
           </div>
           <ul className={`menu-items stroke stroke-color-black`}>
             {links.map(({ link, label }, index) => (
-              <li key={index} className={`primary_font secondary_font-size`}>
+              <motion.li whileHover={{scale:1.1}} key={index} className={`primary_font secondary_font-size`}>
                 <Link
                   className={`no-underline ${
                     pathname === link ? "activeTab" : null
@@ -35,7 +35,7 @@ const NavRest = () => {
                 >
                   {label}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </nav>

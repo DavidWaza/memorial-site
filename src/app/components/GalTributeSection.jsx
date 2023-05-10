@@ -1,6 +1,7 @@
 "use client";
 import { Container, Col, Row } from "react-bootstrap";
 import Link from "next/link";
+import { motion } from "framer-motion";
 export default function GalTributeSection() {
   const sections = [
     {
@@ -20,7 +21,7 @@ export default function GalTributeSection() {
         {sections.map(({ img, title, link }, index) => (
           <Col sm={6} key={index}>
             <Link href={link}>
-                <div className="pere">
+                <motion.div whileHover={{scale:1.06}} className="pere">
                   <img src={img} alt="photo" />
                   <div className="overlay"></div>
                   <div className="sectiontitle">
@@ -29,7 +30,7 @@ export default function GalTributeSection() {
                     </p>
                     <hr className="hr-white" />
                   </div>
-                </div>
+                </motion.div>
             </Link>
           </Col>
         ))}

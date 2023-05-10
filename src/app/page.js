@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -9,6 +10,7 @@ import BioSection from "./components/BioSection";
 import GalTributeSection from "./components/GalTributeSection";
 import Navbar from "./components/Navbar";
 import ModalButton from "./components/ModalForm";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
