@@ -1,12 +1,13 @@
 "use client";
 import * as React from "react";
-import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
+import { CardActions } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-
+import Link from '@mui/material/Link';
 export default function UserCommentCard({ src, name }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -17,7 +18,7 @@ export default function UserCommentCard({ src, name }) {
         </Typography>
       </CardContent>
       <CardContent>
-        <Typography
+      <Typography
           gutterBottom
           variant="p"
           component="div"
@@ -25,6 +26,11 @@ export default function UserCommentCard({ src, name }) {
         >
           {name}
         </Typography>
+      <CardActions>
+        <Button size="small" className="primary_font" href='/tribute'>Learn More</Button>
+        
+      </CardActions>
+       
       </CardContent>
     </Card>
   );

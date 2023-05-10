@@ -363,7 +363,8 @@ body {
     height: 32px;
     width: 30px;
     top: 20px;
-    left: 20px;
+    transform: translate(-100%, 60%);
+    right: 0;
     z-index: 5;
     opacity: 0;
     cursor: pointer;
@@ -375,7 +376,8 @@ body {
     height: 32px;
     width: 30px;
     top: 20px;
-    left: 20px;
+    transform: translate(-100%, 60%);
+    right: 0;
     z-index: 5;
     opacity: 0;
     cursor: pointer;
@@ -387,7 +389,8 @@ body {
     width: 35px;
     position: absolute;
     top: 20px;
-    left: 20px;
+    transform: translate(-100%, 60%);
+    right: 0;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -400,7 +403,8 @@ body {
     width: 35px;
     position: absolute;
     top: 20px;
-    left: 20px;
+    transform: translate(-100%, 60%);
+    right: 0;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -458,7 +462,10 @@ body {
     padding-right: 20%;
   }
 
+
   .nav-color-black .menu-items {
+    position: absolute;
+    left: 120%;
     padding-top: 100px;
     background: #000;
     height: 100vh;
