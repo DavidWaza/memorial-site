@@ -14,7 +14,7 @@ const NavRest = () => {
 
   return (
     <>
-      <div className="navbar flex justify-end -mt-5">
+      <nav className="navbar flex justify-end -mt-5">
         <nav
           className={`p-8 navbar-bg-white w-full`}
         >
@@ -39,7 +39,7 @@ const NavRest = () => {
             ))}
           </ul>
         </nav>
-      </div>
+      </nav>
     </>
   );
 };

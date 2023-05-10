@@ -1,13 +1,23 @@
-'use client'
-import { useState, useCallback } from "react";
-import { photos } from "../components/Photo";
+"use client";
+import { Container, Row, Col } from "react-bootstrap";
+import { Photos } from "../../../lib/data";
+import Image from "next/image";
+import NavRest from "../components/NavRest";
 
-const Biography = () => {
-
+const GalleryPage = () => {
   return (
-    <div>
- 
-    </div>
+    <>
+    <NavRest />
+      <Container>
+        <Row className="mt-52">
+          {Photos.map(({ id, src, width, height }) => (
+            <Col sm={4} key={id}>
+              <img src={src} alt="photo"  />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </>
   );
-}
-export default Biography;
+};
+export default GalleryPage;
