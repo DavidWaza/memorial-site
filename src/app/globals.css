@@ -445,7 +445,7 @@ body {
 
   .navbar .menu-items {
     padding-top: 100px;
-    background: transparent;
+    background: white;
     height: 100vh;
     max-width: 300px;
     transform: translate(-150%);
