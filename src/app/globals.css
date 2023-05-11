@@ -464,7 +464,7 @@ body {
     position: absolute;
     padding-top: 100px;
     background: #000;
-    height: 100vh;
+    height: 74vh;
     max-width: 300px;
     transform: translate(-150%);
     display: flex;
