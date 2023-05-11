@@ -1,45 +1,92 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-const NavRest = () => {
+
+const links = [
+  { link: "/", label: "Home" },
+  { link: "/biography", label: "Biography" },
+  { link: "gallery", label: "Gallery" },
+  { link: "/tribute", label: "Tribute" },
+];
+
+const BigNav = () => {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [shouldChangeBg, setShouldChangeBg] = useState(false);
+
   const pathname = usePathname();
-  const links = [
-    { link: "/", label: "Home" },
-    { link: "/biography", label: "Biography" },
-    { link: "gallery", label: "Gallery" },
-    { link: "/tribute", label: "Tribute" },
-  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const { scrollY, innerHeight } = window;
+      const exceedsViewport = scrollY > innerHeight;
+
+      setShouldChangeBg(exceedsViewport);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <>
-      <div className="navbar flex justify-end -mt-5">
-        <nav
-          className={`p-8 navbar-bg-white w-full`}
+    <nav className={`navbar-bg-white`}>
+      <button
+        className={`hamburger`}
+        id="text"
+        onClick={() => {
+          setIsNavExpanded(!isNavExpanded);
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
         >
-          <input type="checkbox" name="" id="" />
-          <div className="hamburger-lines p-0">
-            <span className="line line1"></span>
-            <span className="line line2"></span>
-            <span className="line line3"></span>
-          </div>
-          <ul className={`menu-items stroke stroke-color-black`}>
-            {links.map(({ link, label }, index) => (
-              <motion.li whileHover={{scale:1.1}} key={index} className={`primary_font secondary_font-size`}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+          />
+        </svg>
+      </button>
+      <div
+        className={
+          isNavExpanded
+            ? `${`navigationMenu`} ${`expanded`}`
+            : `${`navigationMenu`}`
+        }
+      >
+        <ul className={` stroke stroke-inverse`}>
+          {links.map(({ link, label }, index) => {
+            return (
+              <li className={`pt-5 primary_font `} key={index + label}>
                 <Link
-                  className={`no-underline ${
-                    pathname === link ? "activeTab" : null
-                  }`}
                   href={link}
+                  onClick={() => {
+                    isNavExpanded && setIsNavExpanded(!isNavExpanded);
+                  }}
+                  className={`${pathname === link ? "activeTab" : null}`}
                 >
-                  {label}
+                  <p
+                    className={`primary_font secondary_font-size text-black ${
+                      label === "Tribute" ? "tribute-button" : ""
+                    }`}
+                  >
+                    {label}
+                  </p>
                 </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </nav>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-    </>
+    </nav>
   );
 };
-export default NavRest;
+
+export default BigNav;

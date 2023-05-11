@@ -6,7 +6,7 @@ import NavRest from "../components/NavRest";
 
 export default function Biography() {
   return (
-    <main className="mt-10">
+    <main>
       <NavRest />
       <div className={styles.hero}></div>
       <Container>

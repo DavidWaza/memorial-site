@@ -1,20 +1,21 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
-const Navbar = () => {
-  const [click, setClick] = useState(false);
-  const pathname = usePathname();
+const links = [
+  { link: "/", label: "Home" },
+  { link: "/biography", label: "Biography" },
+  { link: "gallery", label: "Gallery" },
+  { link: "/tribute", label: "Tribute" },
+];
+
+const BigNav = () => {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [shouldChangeBg, setShouldChangeBg] = useState(false);
 
-  const links = [
-    { link: "/", label: "Home" },
-    { link: "/biography", label: "Biography" },
-    { link: "gallery", label: "Gallery" },
-    { link: "/tribute", label: "Tribute" },
-  ];
+  const pathname = usePathname();
+
   useEffect(() => {
     const handleScroll = () => {
       const { scrollY, innerHeight } = window;
@@ -29,55 +30,63 @@ const Navbar = () => {
     };
   }, []);
 
-  
-
-  const variants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "-100%" },
-  };
   return (
-    <>
-      <div className="navbar nav-color-black -mt-5">
-        <motion.nav
-          className={`p-8 w-full ${
-            shouldChangeBg ? "navbar-bg-white" : "navbar-container"
-          }`}
-          variants={variants}
+    <nav className={`${shouldChangeBg ? "navbar-bg-white" : "navigation"}`}>
+      <button
+        className={`hamburger`}
+        id="text"
+        onClick={() => {
+          setIsNavExpanded(!isNavExpanded);
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
         >
-          <input type="checkbox" name="" id="" />
-          <div className="hamburger-lines p-0">
-            <span className="line line1"></span>
-            <span className="line line2"></span>
-            <span className="line line3"></span>
-          </div>
-       
-          <ul
-            className={`menu-items stroke ${
-              shouldChangeBg ? "stroke-color-black" : ""
-            }`}
-          >
-            {links.map(({ link, label }, index) => (
-              <motion.li
-                whileHover={{ scale: 1.1 }}
-                key={index}
-                className={`primary_font secondary_font-size`}
-              >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+          />
+        </svg>
+      </button>
+      <div
+        className={
+          isNavExpanded
+            ? `${`navigationMenu`} ${`expanded`}`
+            : `${`navigationMenu`}`
+        }
+      >
+        <ul className={`${shouldChangeBg ? "stroke stroke-inverse" : "stroke"}`}>
+          {links.map(({ link, label }, index) => {
+            return (
+              <li className={`pt-5 primary_font`} key={index + label}>
                 <Link
-                  className={`no-underline ${
-                    pathname === link ? "activeTab" : null
-                  }`}
                   href={link}
+                  onClick={() => {
+                    isNavExpanded && setIsNavExpanded(!isNavExpanded);
+                  }}
+                  className={`${pathname === link ? "activeTab" : null}`}
                 >
-                  <p className={label === "Tribute" ? "tribute-button" : ""}>
+                  <p
+                    className={`primary_font secondary_font-size ${
+                      label === "Tribute" ? "tribute-button" : ""
+                    }`}
+                  >
                     {label}
                   </p>
                 </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.nav>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-    </>
+    </nav>
   );
 };
-export default Navbar;
+
+export default BigNav;
