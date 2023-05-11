@@ -329,7 +329,7 @@ body {
   .navbar {
     opacity: 0.95;
     background-color: transparent;
-    position: fixed !important;
+    position: absolute;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -340,16 +340,12 @@ body {
     display: block;
   }
 
-  .hamburger-lines {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .navbar-container {
+   .navbar-container {
     display: block;
     height: 64px;
+    position: absolute;
   }
+ 
 
   .navbar-bg-white {
     display: block;
@@ -410,6 +406,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
   }
+ 
 
   .navbar-container .hamburger-lines .line {
     display: block;
@@ -424,7 +421,7 @@ body {
     height: 4px;
     width: 100%;
     border-radius: 10px;
-    background: #fff;
+    background: #000;
   }
 
   .navbar-container .hamburger-lines .line1 {
@@ -465,7 +462,6 @@ body {
 
   .nav-color-black .menu-items {
     position: absolute;
-    left: 120%;
     padding-top: 100px;
     background: #000;
     height: 100vh;

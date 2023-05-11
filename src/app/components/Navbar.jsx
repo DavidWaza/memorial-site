@@ -2,10 +2,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 
 const Navbar = () => {
-
+  const [click, setClick] = useState(false);
   const pathname = usePathname();
   const [shouldChangeBg, setShouldChangeBg] = useState(false);
 
@@ -29,10 +29,12 @@ const Navbar = () => {
     };
   }, []);
 
+  
+
   const variants = {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: "-100%" },
-  }
+  };
   return (
     <>
       <div className="navbar nav-color-black -mt-5">
@@ -48,20 +50,27 @@ const Navbar = () => {
             <span className="line line2"></span>
             <span className="line line3"></span>
           </div>
+       
           <ul
             className={`menu-items stroke ${
               shouldChangeBg ? "stroke-color-black" : ""
             }`}
           >
             {links.map(({ link, label }, index) => (
-              <motion.li whileHover={{scale:1.1}} key={index} className={`primary_font secondary_font-size`}>
+              <motion.li
+                whileHover={{ scale: 1.1 }}
+                key={index}
+                className={`primary_font secondary_font-size`}
+              >
                 <Link
                   className={`no-underline ${
                     pathname === link ? "activeTab" : null
                   }`}
                   href={link}
                 >
-                  <p className={label === 'Tribute' ? 'tribute-button' : ''}>{label}</p>
+                  <p className={label === "Tribute" ? "tribute-button" : ""}>
+                    {label}
+                  </p>
                 </Link>
               </motion.li>
             ))}
