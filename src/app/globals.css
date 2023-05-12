@@ -40,7 +40,8 @@ body {
 .font-adjustment {
   text-align: justify;
 }
-.default_text-size{
+
+.default_text-size {
   font-size: 1rem;
 }
 
@@ -52,7 +53,7 @@ body {
 .hero-bg {
   background-image: url('');
   background: linear-gradient(69.35deg, rgba(0, 0, 0, .4)0%, rgba(0, 0, 0, .4)99.45%), linear-gradient(0deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385153/atani_zuopsm.jpg") no-repeat 10% -130%;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,6 +71,35 @@ body {
   background-position: center;
 }
 
+.galleryImg {
+  background: linear-gradient(69.35deg, rgba(0, 0, 0, .4)0%, rgba(0, 0, 0, .4)99.45%), linear-gradient(0deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385151/263077030_6855465971131917_2427333366931755629_n_hgroeg.jpg") no-repeat 10% -130%;
+  height: 50vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 10% 30%;
+  position: relative;
+  transition: all 0.3s ease-in;
+}
+
+.tributeImg {
+  background: linear-gradient(69.35deg, rgba(0, 0, 0, .4)0%, rgba(0, 0, 0, .4)99.45%), linear-gradient(0deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385153/298209723_8168703349808166_1260154859052573940_n_ic4rtf.jpg") no-repeat 10% -130%;
+  height: 50vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 10% 30%;
+  position: relative;
+  transition: all 0.3s ease-in;
+
+}
+
+.galleryImg:hover{
+  transform: scale(1.1);
+}
+.tributeImg:hover{
+  transform: scale(1.1);
+}
 .hr {
   border: none;
   border-top: 2px solid #000;
@@ -209,6 +239,7 @@ body {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out
 }
+
 .stroke-inverse li a::after {
   background-color: #000 !important;
 }
@@ -222,6 +253,7 @@ body {
   transform-origin: bottom left;
   opacity: 1;
 }
+
 .stroke-inverse li a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
@@ -362,7 +394,7 @@ body {
     width: 50%;
     margin: 0 auto;
   }
-  
+
   .hamburger {
     display: block;
   }
@@ -433,8 +465,10 @@ body {
 @media (max-width: 480px) {
   .carousel-position {
     position: relative;
+    top: 20%;
   }
-  .default_text-size{
+
+  .default_text-size {
     font-size: 1.2rem;
   }
 }
@@ -444,7 +478,8 @@ body {
     position: relative;
     top: 20%;
   }
-  .default_text-size{
+
+  .default_text-size {
     font-size: 1.5rem;
   }
 }
@@ -454,7 +489,8 @@ body {
     position: relative;
     top: -25%;
   }
-  .default_text-size{
+
+  .default_text-size {
     font-size: 1.5rem;
   }
 }
@@ -469,14 +505,14 @@ body {
 @media (width: 375px) {
   .carousel-position {
     position: relative;
-    top: -22%;
+    top: 5%;
   }
 }
 
 @media (width: 360px) {
   .carousel-position {
     position: relative;
-    top: -10%;
+    top: 10%;
   }
 }
 
