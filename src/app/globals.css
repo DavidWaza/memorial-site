@@ -94,12 +94,14 @@ body {
 
 }
 
-.galleryImg:hover{
-  transform: scale(1.1);
+.galleryImg:hover {
+  transform: scale(1.05);
 }
-.tributeImg:hover{
-  transform: scale(1.1);
+
+.tributeImg:hover {
+  transform: scale(1.05);
 }
+
 .hr {
   border: none;
   border-top: 2px solid #000;
@@ -439,7 +441,6 @@ body {
     justify-content: center;
     font-weight: bold;
     text-transform: capitalize;
-    font-family: "Poppins", sans-serif;
   }
 
   .mobileButton>a {
