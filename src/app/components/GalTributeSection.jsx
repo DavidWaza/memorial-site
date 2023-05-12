@@ -17,7 +17,7 @@ export default function GalTributeSection() {
     },
   ];
   return (
-    <Container className="pt-20">
+    <Container className="pt-10">
       <Row>
         {sections.map(({ img, title, link }, index) => (
           <Col sm={6} key={index}>

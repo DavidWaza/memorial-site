@@ -16,7 +16,7 @@ export default function BioSection() {
   };
   return (
     <Container>
-      <Row className="py-20 px-3 md:px-0 g-5 ">
+      <Row className="pt-20 px-3 md:px-0 g-5 ">
         <Col sm={6}>
           <motion.div
             initial={{ opacity: 0 }}
