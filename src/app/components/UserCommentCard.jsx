@@ -5,27 +5,12 @@ import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import { CardActions } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 
-const useStyles = makeStyles(() => ({
-  // card: {
-  //   display: "flex",
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  // },
-  avatar: {
-    width: 70, // Adjust the size as needed
-    height: 70,
-    justifyContent: "center",
-    alignItems: "center",
-    display: "flex",
-  },
-}));
+
 
 export default function UserCommentCard({ src, name }) {
-  const classes = useStyles();
 
   return (
     <Card sx={{ maxWidth: 345 }}>
