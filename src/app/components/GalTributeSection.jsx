@@ -21,6 +21,9 @@ export default function GalTributeSection() {
       <Row>
         {sections.map(({ img, title, link }, index) => (
           <Col sm={6} key={index}>
+            <div className="block md:hidden">
+              <div className="text-[30px] my-2 text-center">{title}</div>
+            </div>
             <Link href={link}>
               <motion.div
                 whileHover={1.1}
