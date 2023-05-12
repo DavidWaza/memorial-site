@@ -44,7 +44,7 @@ export default function BioSection() {
               {bioContents.title.toUpperCase()}
             </p>
             <hr className="hr" />
-            <p className="primary_font leading-[25px] tracking-[2px] font-adjustment text-[20px]">
+            <p className="primary_font leading-[25px] tracking-[2px] font-adjustment default_text-size">
               {bioContents.content}
             </p>
           </motion.div>

@@ -40,6 +40,9 @@ body {
 .font-adjustment {
   text-align: justify;
 }
+.default_text-size{
+  font-size: 1rem;
+}
 
 .img-size {
   height: 400px;
@@ -49,7 +52,7 @@ body {
 .hero-bg {
   background-image: url('');
   background: linear-gradient(69.35deg, rgba(0, 0, 0, .4)0%, rgba(0, 0, 0, .4)99.45%), linear-gradient(0deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385153/atani_zuopsm.jpg") no-repeat 10% -130%;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -93,7 +96,7 @@ body {
 
 .carousel-div {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -131,7 +134,7 @@ body {
 
 .navigation {
   position: fixed;
-  height: 100px;
+  height: 15vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -430,7 +433,9 @@ body {
 @media (max-width: 480px) {
   .carousel-position {
     position: relative;
-    top: 50px;
+  }
+  .default_text-size{
+    font-size: 1.2rem;
   }
 }
 
@@ -439,12 +444,18 @@ body {
     position: relative;
     top: 20%;
   }
+  .default_text-size{
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .carousel-position {
     position: relative;
     top: -25%;
+  }
+  .default_text-size{
+    font-size: 1.5rem;
   }
 }
 

@@ -5,18 +5,40 @@ import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import { CardActions } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 
+const useStyles = makeStyles(() => ({
+  // card: {
+  //   display: "flex",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  // },
+  avatar: {
+    width: 70, // Adjust the size as needed
+    height: 70,
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+  },
+}));
+
 export default function UserCommentCard({ src, name }) {
+  const classes = useStyles();
+
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardHeader avatar={<Avatar alt="Travis Howard" src={src} />} />
+      <CardHeader
+        avatar={
+          <Avatar alt="Travis Howard" src={src} className={classes.avatar} />
+        }
+      />
       <CardContent>
         <Typography
           variant="body2"
           color="text.secondary"
-          className="text-center text-[20px] my-[10px] py-[20px] px-[15px]"
+          className="text-center default_text-size my-[10px] py-[20px] px-[15px]"
         >
           Zephyr moonlit dance cast a spell upon enchanted forest. Whispering
         </Typography>
@@ -31,7 +53,11 @@ export default function UserCommentCard({ src, name }) {
           {name}
         </Typography>
         <CardActions className="flex justify-center">
-          <Button size="small" className="primary_font text-center" href="/tribute">
+          <Button
+            size="small"
+            className="primary_font text-center"
+            href="/tribute"
+          >
             Learn More
           </Button>
         </CardActions>
