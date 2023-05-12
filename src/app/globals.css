@@ -53,7 +53,7 @@ body {
 .hero-bg {
   background-image: url('');
   background: linear-gradient(69.35deg, rgba(0, 0, 0, .4)0%, rgba(0, 0, 0, .4)99.45%), linear-gradient(0deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("https://res.cloudinary.com/ddwkojhaj/image/upload/v1683385153/atani_zuopsm.jpg") no-repeat 10% -130%;
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;

@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 export default function UserCommentCard({ src, name, comments }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardHeader avatar={<Avatar alt="Travis Howard" src={src} />} />
+      <CardHeader avatar={<Avatar alt="Travis Howard" src={src} />} className='flex justify-center'/>
       <CardContent>
         <Typography
           variant="body2"
