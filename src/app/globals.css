@@ -486,19 +486,12 @@ body {
     top: 20%;
   }
 
-  .default_text-size {
-    font-size: 1.5rem;
-  }
 }
 
 @media (min-width: 1024px) {
   .carousel-position {
     position: relative;
     top: -25%;
-  }
-
-  .default_text-size {
-    font-size: 1.5rem;
   }
 }
 

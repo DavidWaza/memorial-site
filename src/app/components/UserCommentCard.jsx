@@ -8,26 +8,19 @@ import { CardActions } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 
-
-
-export default function UserCommentCard({ src, name }) {
-
+export default function UserCommentCard({ src, name, comments }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={
-          <Avatar alt="Travis Howard" src={src} />
-        }
-      />
+      <CardHeader avatar={<Avatar alt="Travis Howard" src={src} />} />
       <CardContent>
         <Typography
           variant="body2"
           color="text.secondary"
           className="text-center default_text-size my-[10px] py-[20px] px-[15px]"
         >
-          Zephyr moonlit dance cast a spell upon enchanted forest. Whispering
+          {comments.trim().substring(0, 80) + "..."}
         </Typography>
-        <hr className='w-1/2 my-[10px] mx-[auto]'/>
+        <hr className="w-1/2 my-[10px] mx-[auto]" />
       </CardContent>
       <CardContent>
         <Typography
