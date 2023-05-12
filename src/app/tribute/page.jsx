@@ -11,13 +11,13 @@ const TributePage = () => {
     <main className="mt-10">
       <NavRest />
       <Container>
-        <Row className="pt-40 g-5">
-          {UserCommentsProfile.map(({ name, src }, index) => (
+        {/* <Row className="pt-40 g-5">
+          {UserCommentsProfile.map(({ name, src,comme }, index) => (
             <Col sm={4} key={index}>
               <UserCommentCard src={src} name={name} />
             </Col>
           ))}
-        </Row>
+        </Row> */}
         <Row>
           <Col>
             <SendMessageForm />
