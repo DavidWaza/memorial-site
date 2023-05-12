@@ -7,7 +7,6 @@ import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TabComponent from "./TabComponent";
-import { motion } from "framer-motion";
 
 const style = {
   position: "absolute",
@@ -27,17 +26,9 @@ export default function ModalButton() {
   const handleClose = () => setOpen(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{
-        delay: 0.7,
-        duration: 0.7,
-        ease: [0.9, 0.71, 0.7, 1.01],
-      }}
-    >
+    <div>
       <Button onClick={handleOpen}>
-        <motion.div
+        <div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{
@@ -48,7 +39,7 @@ export default function ModalButton() {
           className="primary_font text-center text-white p-3 floating-button"
         >
           Write a Tribute
-        </motion.div>
+        </div>
       </Button>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -69,6 +60,6 @@ export default function ModalButton() {
           </Box>
         </Fade>
       </Modal>
-    </motion.div>
+    </div>
   );
 }

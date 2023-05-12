@@ -19,7 +19,7 @@ export default function Home() {
       <Herosection />
       <BioSection />
       <GalTributeSection />
-      <div className=" py-3 my-4 hover:bg-grey">
+      <div className="py-3 my-4 hover:bg-grey">
         <ModalButton />
       </div>
     </main>
