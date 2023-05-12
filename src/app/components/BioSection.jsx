@@ -7,11 +7,12 @@ import { motion } from "framer-motion";
 export default function BioSection() {
   const bioContents = {
     title: "biography",
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Praesent vehicula sapien eu nisi fringilla, 
-       in mollis nisl vulputate. Nullam efficitur, sem sit am
-       et tempus dapibus, eros velit aliquet mauris, quis facili
-       sis tellus mauris eget urna. Duis sed justo vestibulum, efficitur massa eget.`,
+    content: `Christian Atani, an enigmatic figure of his time, 
+    left an indelible mark on the world before his untimely demise. 
+    Born on a stormy night in the quaint town of Bayelsa, 
+    his life's journey would lead him down an extraordinary path of adventure, 
+    innovation, and unwavering determination. This biography seeks to capture the essence of a 
+    man who defied conventional norms, forever etching his name in the annals of history.`,
   };
   return (
     <Container>
@@ -21,17 +22,29 @@ export default function BioSection() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{
+              delay: 0.6,
+              duration: 0.6,
+              ease: [0.9, 0.71, 0.7, 1.01],
+            }}
+            className="bio-bg-image"
+          ></motion.div>
+        </Col>
+        <Col sm={6}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
               delay: 0.5,
               duration: 0.5,
               ease: [0.9, 0.71, 0.7, 1.01],
             }}
-            className="pt-20 pb-6 relative space-adjustment"
+            className=" pb-6 relative space-adjustment"
           >
-            <p className="primary_font secondary_font-size font-adjustment">
+            <p className="primary_font text-[25px] font-adjustment">
               {bioContents.title.toUpperCase()}
             </p>
             <hr className="hr" />
-            <p className="primary_font leading-[25px] tracking-normal font-adjustment">
+            <p className="primary_font leading-[25px] tracking-[2px] font-adjustment text-[20px]">
               {bioContents.content}
             </p>
           </motion.div>
@@ -55,18 +68,6 @@ export default function BioSection() {
               </Button>
             </motion.div>
           </Link>
-        </Col>
-        <Col sm={6}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{
-              delay: 0.6,
-              duration: 0.6,
-              ease: [0.9, 0.71, 0.7, 1.01],
-            }}
-            className="bio-bg-image"
-          ></motion.div>
         </Col>
       </Row>
     </Container>

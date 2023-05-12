@@ -13,23 +13,28 @@ export default function UserCommentCard({ src, name }) {
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader avatar={<Avatar alt="Travis Howard" src={src} />} />
       <CardContent>
-        <Typography variant="body2" color="text.secondary" className="">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className="text-center text-[20px] my-[10px] py-[20px] px-[15px]"
+        >
           Zephyr moonlit dance cast a spell upon enchanted forest. Whispering
         </Typography>
       </CardContent>
       <CardContent>
-      <Typography
+        <Typography
           gutterBottom
           variant="p"
           component="div"
-          className="flex justify-end font-extrabold capitalize px-4"
+          className="flex justify-center text-mute font-extrabold text-[18px] -mt-[30px] capitalize px-4"
         >
           {name}
         </Typography>
-      <CardActions>
-        <Button size="small" className="primary_font" href='/tribute'>Learn More</Button>
-      </CardActions>
-       
+        <CardActions className="flex justify-center">
+          <Button size="small" className="primary_font text-center" href="/tribute">
+            Learn More
+          </Button>
+        </CardActions>
       </CardContent>
     </Card>
   );
