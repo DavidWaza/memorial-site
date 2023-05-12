@@ -16,7 +16,7 @@ export default function UserCommentCard({ src, name }) {
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar alt="Travis Howard" src={src} className={classes.avatar} />
+          <Avatar alt="Travis Howard" src={src} />
         }
       />
       <CardContent>
