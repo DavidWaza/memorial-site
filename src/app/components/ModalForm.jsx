@@ -45,7 +45,7 @@ export default function ModalButton() {
             duration: 0.6,
             ease: [0.9, 0.71, 0.7, 1.01],
           }}
-          className="primary_font text-center text-white px-3"
+          className="primary_font text-center text-white p-3 floating-button"
         >
           Write a Tribute
         </motion.div>

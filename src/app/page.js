@@ -10,7 +10,6 @@ import BioSection from "./components/BioSection";
 import GalTributeSection from "./components/GalTributeSection";
 import Navbar from "./components/Navbar";
 import ModalButton from "./components/ModalForm";
-import FloatingButton from "./components/FloatingButton";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
       <div className="bg-black py-3 flex justify-center my-4 hover:bg-grey">
         <ModalButton />
       </div>
-      <FloatingButton />
     </main>
   );
 }
