@@ -93,7 +93,14 @@ body {
   transition: all 0.3s ease-in;
 
 }
-
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+  content: 'next';
+  font-size: 30px !important;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  content: 'prev';
+  font-size: 30px !important;
+}
 .galleryImg:hover {
   transform: scale(1.05);
 }

@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TabComponent from "./TabComponent";
 import { motion } from "framer-motion";
+
 const style = {
   position: "absolute",
   top: "50%",

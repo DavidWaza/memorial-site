@@ -42,6 +42,7 @@ export default function UserCommentCard({ src, name }) {
         >
           Zephyr moonlit dance cast a spell upon enchanted forest. Whispering
         </Typography>
+        <hr className='w-1/2 my-[10px] mx-[auto]'/>
       </CardContent>
       <CardContent>
         <Typography
@@ -55,7 +56,7 @@ export default function UserCommentCard({ src, name }) {
         <CardActions className="flex justify-center">
           <Button
             size="small"
-            className="primary_font text-center"
+            className="primary_font text-center text-[12px]"
             href="/tribute"
           >
             Learn More
