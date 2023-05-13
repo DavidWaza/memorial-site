@@ -1,5 +1,6 @@
 "use client";
-import { Container, Col, Row } from "react-bootstrap";
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -17,10 +18,10 @@ export default function GalTributeSection() {
     },
   ];
   return (
-    <Container className="pt-10">
-      <Row>
+    <Box sx={{ flexGrow: 1 }} className="pt-10">
+      <Grid container spacing={2}>
         {sections.map(({ img, title, link }, index) => (
-          <Col sm={6} key={index}>
+          <Grid item xs={12} md={6} key={index}>
             <div className="block md:hidden">
               <div className="text-[30px] my-2 text-center">{title}</div>
             </div>
@@ -50,9 +51,9 @@ export default function GalTributeSection() {
                 </div>
               </motion.div>
             </Link>
-          </Col>
+          </Grid>
         ))}
-      </Row>
-    </Container>
+      </Grid>
+    </Box>
   );
 }

@@ -2,7 +2,10 @@
 import Button from "./Button";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
-import { Container, Row, Col } from "react-bootstrap";
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
@@ -40,7 +43,7 @@ export default function SendCompanyForm({className, party}) {
 
   return (
     <>
-      <Container>
+      <Box>
         <div className="mt-3 mb-5 text-center w-full">
           <p className="text-black primary_font secondary_font-size text-center">
             PAY YOUR RESPECT
@@ -135,7 +138,7 @@ export default function SendCompanyForm({className, party}) {
             </Button>
           </div>
         </form>
-      </Container>
+      </Box>
     </>
   );
 }

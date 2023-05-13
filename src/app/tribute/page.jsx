@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import SendMessageForm from "../components/SendMessageForm";
 import NavRest from "../components/NavRest";
 import UserCommentCard from "../components/UserCommentCard";
@@ -10,7 +12,7 @@ const TributePage = () => {
   return (
     <main className="mt-10">
       <NavRest />
-      <Container>
+      <Box>
         {/* <Row className="pt-40 g-5">
           {UserCommentsProfile.map(({ name, src,comme }, index) => (
             <Col sm={4} key={index}>
@@ -18,12 +20,12 @@ const TributePage = () => {
             </Col>
           ))}
         </Row> */}
-        <Row>
-          <Col>
+        <Grid>
+          <Grid>
             <SendMessageForm />
-          </Col>
-        </Row>
-      </Container>
+          </Grid>
+        </Grid>
+      </Box>
     </main>
   );
 };

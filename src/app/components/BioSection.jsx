@@ -1,5 +1,6 @@
 "use client";
-import { Container, Col, Row } from "react-bootstrap";
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Button from "./Button";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -15,9 +16,9 @@ export default function BioSection() {
     man who defied conventional norms, forever etching his name in the annals of history.`,
   };
   return (
-    <Container>
-      <Row className="pt-20 px-3 md:px-0">
-        <Col sm={6}>
+    <Box>
+      <Grid container spacing={2} className="pt-20 px-3 md:px-0">
+        <Grid item xs={12} md={6}>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -28,8 +29,8 @@ export default function BioSection() {
             }}
             className="bio-bg-image"
           ></motion.div>
-        </Col>
-        <Col sm={6}>
+        </Grid>
+        <Grid item xs={12} md={6}>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -68,8 +69,8 @@ export default function BioSection() {
               </Button>
             </motion.div>
           </Link>
-        </Col>
-      </Row>
-    </Container>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }

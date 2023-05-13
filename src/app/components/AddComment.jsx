@@ -1,10 +1,11 @@
-import { Container, Col, Row } from "react-bootstrap";
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 
 const AddComment = ({ isSubmitted, firstName, lastName, message }) => {
   return (
-    <Container>
-      <Row className="card">
-        <Col>
+    <Box>
+      <Grid className="card">
+        <Grid>
           <div className="flex">
             <p className="primary_font font-black antialiased text-md">
               {isSubmitted && firstName + " " + " " + lastName}
@@ -15,9 +16,9 @@ const AddComment = ({ isSubmitted, firstName, lastName, message }) => {
               {isSubmitted && message}
             </p>
           </div>
-        </Col>
-      </Row>
-    </Container>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 export default AddComment;

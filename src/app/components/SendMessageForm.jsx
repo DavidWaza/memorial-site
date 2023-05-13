@@ -1,8 +1,8 @@
 "use client";
 import Button from "./Button";
+import Box from '@mui/material/Box';
 import { useState, useEffect } from "react";
 import clsx from "clsx";
-import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
@@ -38,7 +38,7 @@ export default function SendMessageForm({className, party}) {
 
   return (
     <>
-      <Container>
+      <Box>
         <div className="mt-10 mb-5 text-center w-full">
           <p className="text-black primary_font secondary_font-size text-center">
             PAY YOUR RESPECT
@@ -110,7 +110,7 @@ export default function SendMessageForm({className, party}) {
             </Button>
           </div>
         </form>
-      </Container>
+      </Box>
     </>
   );
 }
