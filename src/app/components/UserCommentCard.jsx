@@ -8,10 +8,17 @@ import { CardActions } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 
-export default function UserCommentCard({ src, name, comments }) {
+export default function UserCommentCard({ alt, src, name, comments }) {
   return (
-    <Card sx={{ maxWidth: 345 }} className='opacity-50'>
-      <CardHeader avatar={<Avatar alt="Travis Howard" src={src} />} className='flex justify-center'/>
+    <Card sx={{ maxWidth: 345 }} className="opacity-75">
+      <div className="flex justify-center align-middle">
+        <CardHeader
+          avatar={
+            <Avatar alt={alt} src={src} sx={{ width: 56, height: 56 }} />
+          }
+        />
+      </div>
+
       <CardContent>
         <Typography
           variant="body2"
