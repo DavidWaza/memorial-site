@@ -41,11 +41,11 @@ export default function BioSection() {
             }}
             className=" pb-6 relative space-adjustment"
           >
-            <p className="primary_font my-7 text-[25px] font-adjustment">
+            <p className="primary_font mt-10 mb-3 text-[25px] font-adjustment">
               {bioContents.title.toUpperCase()}
             </p>
-            <hr className="hr" />
-            <p className="primary_font leading-[25px] tracking-[2px] font-adjustment default_text-size">
+            <hr className="hr mb-3" />
+            <p className="primary_font leading-[25px] tracking-[2px] font-adjustment text-[20px]">
               {bioContents.content}
             </p>
           </motion.div>

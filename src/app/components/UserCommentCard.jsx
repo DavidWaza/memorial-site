@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 
 export default function UserCommentCard({ alt, src, name, comments }) {
   return (
-    <Card sx={{ maxWidth: 345 }} className="opacity-75 -p-[-16px]">
+    <Card sx={{ maxWidth: 345 }} className="opacity-[.83] -p-[-16px]">
       <div className="flex justify-center align-middle">
         <CardHeader
           avatar={
@@ -44,7 +44,7 @@ export default function UserCommentCard({ alt, src, name, comments }) {
             className="primary_font text-center text-[12px]"
             href="/tribute"
           >
-            Learn More
+            See More
           </Button>
         </CardActions>
       </CardContent>

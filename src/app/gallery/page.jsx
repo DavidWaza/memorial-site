@@ -10,9 +10,9 @@ const GalleryPage = () => {
     <>
     <NavRest />
       <Box>
-        <Grid className="mt-52 g-0">
+        <Grid container spacing={2} className="g-0">
           {Photos.map(({ id, src}) => (
-            <Grid md={4} key={id}>
+            <Grid item md={4} key={id}>
               <img src={src} alt="photo" className="img-size" />
             </Grid>
           ))}

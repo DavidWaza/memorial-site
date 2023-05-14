@@ -32,9 +32,9 @@ const CustomCarousel = () => {
           modules={[Keyboard, Navigation, Pagination]}
           className="mySwiper"
       >
-        {UserCommentsProfile.map(({ name, src, comments }, index) => (
+        {UserCommentsProfile.map(({ name, src, showLess}, index) => (
           <SwiperSlide key={index}>
-            <UserCommentCard src={src} name={name} comments={comments}/>
+            <UserCommentCard src={src} name={name} comments={showLess}/>
           </SwiperSlide>
         ))}
       </Swiper>
