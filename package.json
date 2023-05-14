@@ -31,6 +31,8 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-photo-album": "^2.2.0",
+    "react-social-login-buttons": "^3.9.1",
+    "reactjs-social-login": "^2.6.2",
     "remake": "^2.6.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.2",

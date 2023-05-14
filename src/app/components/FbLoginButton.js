@@ -1,45 +1,38 @@
-// "use client";
-// import React, { useState } from "react";
-// import FacebookLogin from "react-facebook-login";
+"use client";
+import React, { useState } from "react";
+import { LoginSocialFacebook } from "reactjs-social-login";
+import { FacebookLoginButton } from "react-social-login-buttons";
 
-// const FbLoginButton = () => {
-//   const [login, setLogin] = useState(false);
-//   const [data, setData] = useState({});
-//   const [picture, setPicture] = useState("");
+const FbLoginButton = () => {
+  const [profile, setProfile] = useState(null);
+  return (
+    <div>
+      {!profile ? (
+        <LoginSocialFacebook
+          appId={process.env.FB_ID}
+          onResolve={(response) => {
+            console.log(response);
+            setProfile(response.data);
+          }}
+          onReject={(error) => {
+            console.log(error);
+          }}
+        >
+          <FacebookLoginButton />
+        </LoginSocialFacebook>
+      ) : (
+        ""
+      )}
 
-//   const responseFacebook = (response) => {
-//     console.log(response);
-//     setData(response);
-//     setPicture(response.picture.data.url);
-//     if (response.accessToken) {
-//       setLogin(true);
-//     } else {
-//       setLogin(false);
-//     }
-//   };
-
-//   return (
-//     <div class="container">
-//       <div>
-//         {!login && (
-//           <FacebookLogin
-//             appId="776667614032350"
-//             autoLoad={true}
-//             fields="name,email,picture"
-//             scope="public_profile,user_friends"
-//             callback={responseFacebook}
-//             icon="fa-facebook"
-//           />
-//         )}
-//         {login && <img src={picture} alt='pic' />}
-//       </div>
-//       {login && (
-//         <>
-//           <div>{data.name}</div>
-//           <div>{data.email}</div>
-//         </>
-//       )}
-//     </div>
-//   );
-// };
-// export default FbLoginButton;
+      {profile ? (
+        <div>
+          <h1>{profile.name}</h1>
+          <img src={profile.picture.data.url} />
+        </div>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+};
+export default FbLoginButton;

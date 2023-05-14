@@ -49,6 +49,10 @@ body {
   height: 400px;
   width: 100%;
 }
+
+.css-46bh2p-MuiCardContent-root {
+  padding: 5  px !important;
+}
 /* COMPONENT FLOATING BUTTON */
 .floating-button {
   position: fixed;
