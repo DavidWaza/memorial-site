@@ -56,7 +56,7 @@ body {
 .image-lightbox-wrapper{
   background: black;
   height: 100vh;
-  width: 70%;
+  width: 100%;
   overflow: hidden;
   position: fixed;
   margin: 0 auto;

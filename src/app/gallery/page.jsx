@@ -22,34 +22,37 @@ const GalleryPage = () => {
     if (action === "prev-img") {
       setData({ src: Photos[id - 1], i: id - 1 });
     }
-    if(!action){
-      setData({src: '', id:0})
+    if (!action) {
+      setData({ src: "", id: 0 });
     }
   };
   return (
     <>
+      {data.src && (
+        <div className="mt-[5%]">
+          <div className="image-lightbox-wrapper">
+            <button onClick={() => imageAction()} className="button-cancel">
+              X
+            </button>
+            <button
+              onClick={() => imageAction("prev-img")}
+              className="bg-white p-3"
+            >
+              Previous
+            </button>
+            <img src={data.src} className="image-lightbox" />
+            <button
+              onClick={() => imageAction("next-img")}
+              className="bg-white p-3"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      )}
       <Container>
         {/* <NavRest /> */}
-        {data.src && (
-              <div className="mt-[10%]">
-                <div className="image-lightbox-wrapper">
-                  <button onClick={() => imageAction()} className="button-cancel">X</button>
-                  <button
-                    onClick={() => imageAction("prev-img")}
-                    className="bg-white p-3"
-                  >
-                    Previous
-                  </button>
-                  <img src={data.src} className="image-lightbox" />
-                  <button
-                    onClick={() => imageAction("next-img")}
-                    className="bg-white p-3"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            )}
+
         <Box>
           <Grid container spacing={2}>
             {Photos.map(({ id, src }) => (
