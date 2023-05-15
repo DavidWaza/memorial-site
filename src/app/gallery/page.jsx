@@ -1,74 +1,56 @@
 "use client";
 import { useState } from "react";
+import { Gallery } from "react-grid-gallery";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
+import { images } from "../components/CompImage";
+import BigNav from "../components/NavRest";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import { Photos } from "../../../lib/data";
 import Container from "@mui/material/Container";
-import Image from "next/image";
-import NavRest from "../components/NavRest";
 
-const GalleryPage = () => {
-  const [data, setData] = useState({ src: "", id: 0 });
+export default function App() {
+  const [index, setIndex] = useState(-1);
 
-  const viewImage = (src, id) => {
-    setData({ src, id });
-  };
+  const currentImage = images[index];
+  const nextIndex = (index + 1) % images.length;
+  const nextImage = images[nextIndex] || currentImage;
+  const prevIndex = (index + images.length - 1) % images.length;
+  const prevImage = images[prevIndex] || currentImage;
 
-  const imageAction = (action) => {
-    let id = data.id;
-    if (action === "next-img") {
-      setData({ src: Photos[id + 1], i: id + 1 });
-    }
-    if (action === "prev-img") {
-      setData({ src: Photos[id - 1], i: id - 1 });
-    }
-    if (!action) {
-      setData({ src: "", id: 0 });
-    }
-  };
+  const handleClick = (index, item) => setIndex(index);
+  const handleClose = () => setIndex(-1);
+  const handleMovePrev = () => setIndex(prevIndex);
+  const handleMoveNext = () => setIndex(nextIndex);
+
   return (
     <>
-      {data.src && (
-        <div className="mt-[5%]">
-          <div className="image-lightbox-wrapper">
-            <button onClick={() => imageAction()} className="button-cancel">
-              X
-            </button>
-            <button
-              onClick={() => imageAction("prev-img")}
-              className="bg-white p-3"
-            >
-              Previous
-            </button>
-            <img src={data.src} className="image-lightbox" />
-            <button
-              onClick={() => imageAction("next-img")}
-              className="bg-white p-3"
-            >
-              Next
-            </button>
-          </div>
-        </div>
-      )}
-      <Container>
-        {/* <NavRest /> */}
-
-        <Box>
-          <Grid container spacing={2}>
-            {Photos.map(({ id, src }) => (
-              <Grid item md={4} key={id}>
-                <img
-                  src={src}
-                  alt="photo"
-                  className="img-size mt-[18%]"
-                  onClick={() => viewImage(src, id)}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Container>
+      <BigNav />
+      <>
+        <Container>
+          <Box className='pt-[12%]'>
+            <Gallery
+              images={images}
+              onClick={handleClick}
+              enableImageSelection={false}
+            />
+            {!!currentImage && (
+              <Lightbox
+                mainSrc={currentImage.original}
+                imageTitle={currentImage.caption}
+                mainSrcThumbnail={currentImage.src}
+                nextSrc={nextImage.original}
+                nextSrcThumbnail={nextImage.src}
+                prevSrc={prevImage.original}
+                prevSrcThumbnail={prevImage.src}
+                onCloseRequest={handleClose}
+                onMovePrevRequest={handleMovePrev}
+                onMoveNextRequest={handleMoveNext}
+              />
+            )}
+          </Box>
+        </Container>
+      </>
     </>
   );
-};
-export default GalleryPage;
+}

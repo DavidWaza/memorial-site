@@ -1,21 +1,19 @@
 "use client";
 import Button from "./Button";
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import FbLoginButton from "./FbLoginButton";
 
-export default function SendMessageForm({className, party}) {
+export default function SendMessageForm({ className, party }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
-  const [displayPic, setDisplayPic] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [addComment, setAddComment] = useState([]);
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,6 +46,7 @@ export default function SendMessageForm({className, party}) {
         <form className="w-full" onSubmit={handleSubmit}>
           <div className="my-3 flex justify-center">
             <input
+              required
               className={clsx(
                 "border-solid-gray px-6 py-3 text-lg w-full bg-[#D9D9D9] primary_font",
                 className
@@ -60,6 +59,7 @@ export default function SendMessageForm({className, party}) {
           </div>
           <div className="my-3 flex justify-center">
             <input
+              required
               className={clsx(
                 "border-solid-gray px-6 py-3 text-lg w-full bg-[#D9D9D9] primary_font",
                 className
@@ -70,20 +70,10 @@ export default function SendMessageForm({className, party}) {
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
-          <div className="my-3 flex justify-center relative">
-         
-            <div className="border-solid-gray px-6 py-3 text-lg w-full bg-[#D9D9D9] primary_font">
-              <input
-                type="file"
-                name="upload"
-                accept="image/png, image/jpeg, image/jpg"
-                onChange={(e) => setDisplayPic(e.target.value)}
-              />
-            </div>
-          </div>
 
           <div className="flex justify-center md:mt-0">
             <textarea
+              required
               name="text"
               className="border-solid-gray px-6 py-3 text-lg  w-full bg-[#D9D9D9] primary_font"
               placeholder="Message"
@@ -108,6 +98,9 @@ export default function SendMessageForm({className, party}) {
                 "Send Message"
               )}
             </Button>
+          </div>
+          <div>
+            <FbLoginButton />
           </div>
         </form>
       </Box>
